@@ -4,6 +4,8 @@
  */
 
 #include "../inc/ls.hpp"
+#include "boost/filesystem.hpp"
+#include "boost/regex.hpp"
 #include <iostream>
 
 using namespace std;

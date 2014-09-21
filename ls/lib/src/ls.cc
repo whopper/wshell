@@ -11,15 +11,36 @@ using namespace boost::filesystem;
 
 ls::ls(string path)
 {
-    get_directory_content_vector(path);
+    directory = path;
+    is_valid_path = check_directory_exists();
+    if (is_valid_path) {
+        get_directory_content_vector();
+    }
 }
 
-int ls::get_directory_content_vector(string path)
+int ls::print_directory_contents()
 {
+    if ( ! is_valid_path) {
+        cout << "ls: cannot access " << directory << ": No such file or directory\n";
+        return 0;
+    }
+
+    // Copy each item of the vector to stdout
+    copy(contents.begin(), contents.end(), ostream_iterator<string>(std::cout, "\t"));
+    cout << endl;
+    return 1;
+}
+
+int ls::get_directory_content_vector()
+{
+    if ( ! is_valid_path) {
+        return 0;
+    }
+
     directory_iterator end_itr;
 
     // Iterate over files in directory
-    for (directory_iterator itr(path); itr != end_itr; ++itr) {
+    for (directory_iterator itr(directory); itr != end_itr; ++itr) {
         string filename;
         string current_file = itr->path().string();
 
@@ -35,8 +56,12 @@ int ls::get_directory_content_vector(string path)
     }
 }
 
-int ls::print_directory_contents()
+bool ls::check_directory_exists()
 {
-    // Copy each item of the vector to stdout
-    copy(contents.begin(), contents.end(), ostream_iterator<string>(std::cout, " "));
+    if (is_directory(directory)) {
+        return true;
+    } else {
+        return false;
+    }
 }
+

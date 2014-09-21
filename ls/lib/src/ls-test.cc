@@ -7,7 +7,6 @@
  */
 
 #include "../inc/ls.hpp"
-#include <iostream>
 
 using namespace::std;
 

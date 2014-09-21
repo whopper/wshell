@@ -17,8 +17,11 @@ class ls
         int print_directory_contents();
 
     protected:
-        int get_directory_content_vector(string path);
+        int get_directory_content_vector();
+        bool check_directory_exists();
 
     private:
+        string directory;
         vector<string> contents;
+        bool is_valid_path;
 };

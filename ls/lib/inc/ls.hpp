@@ -11,6 +11,7 @@ using namespace std;
 class ls
 {
     public:
+        ls();
         ls(string path);
         int print_directory_contents();
 

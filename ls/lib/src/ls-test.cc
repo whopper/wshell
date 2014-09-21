@@ -13,13 +13,12 @@ using namespace::std;
 int main(int argc, char *argv[])
 {
     if (argc < 2) {
-        ls lsobj(".");
+        ls lsobj;
         lsobj.print_directory_contents();
     } else {
         ls lsobj(argv[1]);
         lsobj.print_directory_contents();
     }
-
     return 0;
 }
 

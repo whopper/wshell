@@ -11,6 +11,15 @@
 using namespace std;
 using namespace boost::filesystem;
 
+ls::ls()
+{
+    directory = ".";
+    is_valid_path = check_directory_exists();
+    if (is_valid_path) {
+        get_directory_content_vector();
+    }
+}
+
 ls::ls(string path)
 {
     directory = path;

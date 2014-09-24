@@ -6,3 +6,8 @@ A C++ learning repository which will eventually build up to a working
 
 The general purpose of this repository is to help me pratice up on C++
 and learn more about the C++ boost library.
+
+## Existing Commands
+* ls
+* cat
+

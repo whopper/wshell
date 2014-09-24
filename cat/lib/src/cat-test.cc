@@ -12,5 +12,11 @@ using namespace std;
 
 int main(int argc, char *argv[])
 {
-    
+    if (argc < 2) {
+        cat catobj;
+        catobj.print_file_contents();
+    } else {
+        cat catobj(argv[1]);
+        catobj.print_file_contents();
+    }
 }

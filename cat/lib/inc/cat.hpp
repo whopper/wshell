@@ -10,6 +10,7 @@ using namespace std;
 class cat
 {
     public:
+        cat();
         cat(string path);
         int print_file_contents();
 
@@ -21,4 +22,4 @@ class cat
         string filepath;
         string contents;
         bool is_valid_file;
-}
+};

@@ -5,7 +5,6 @@
 
 #include "../inc/cat.hpp"
 #include "boost/filesystem.hpp"
-#include "boost/regex.hpp"
 #include <iostream>
 #include <fstream>
 #include <sstream>
